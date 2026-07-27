@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prince Fuhad Oloto — Entrepreneur · Chairman, Futol Group</title>
+<meta name="description" content="Official portfolio of HRM Prince Fuhad Oloto — Lagos-born entrepreneur, chairman of the Futol Group of Companies, and custodian of the Oloto royal heritage.">
+<link rel="icon" href="images/pfo-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0906;
+    --charcoal:#17140f;
+    --charcoal-2:#1f1b14;
+    --ivory:#f8f3e8;
+    --ivory-2:#f1e9d8;
+    --ink:#221d14;
+    --muted:#867a63;
+    --muted-light:#bcae95;
+    --gold:#c79a2e;
+    --gold-bright:#e7bb4c;
+    --gold-dim:#8a6b21;
+    --line:rgba(199,154,46,0.25);
+    --shadow: 0 30px 60px -20px rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+
+  .container{
+    width:100%;
+    max-width:1220px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:'Manrope', sans-serif;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  ::selection{ background:var(--gold); color:var(--black); }
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    padding:22px 0;
+    transition:all .35s ease;
+    background:transparent;
+  }
+  header.scrolled{
+    background:rgba(10,9,6,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  }
+  header .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand img{
+    height:42px;
+    width:42px;
+    border-radius:50%;
+    transition:height .35s ease, width .35s ease;
+  }
+  header.scrolled .brand img{height:36px; width:36px;}
+  .brand-text{
+    font-family:'Fraunces', serif;
+    color:var(--ivory);
+    font-size:15px;
+    letter-spacing:0.03em;
+    line-height:1.15;
+  }
+  .brand-text span{
+    display:block;
+    font-family:'Manrope',sans-serif;
+    font-size:9.5px;
+    letter-spacing:0.2em;
+    color:var(--gold);
+    font-weight:700;
+    margin-top:2px;
+  }
+  nav ul{
+    display:flex;
+    gap:38px;
+  }
+  nav a{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    color:var(--ivory-2);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1px;
+    background:var(--gold);
+    transition:width .3s ease;
+  }
+  nav a:hover::after{width:100%;}
+  nav a:hover{color:var(--gold-bright);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    border-radius:2px;
+    cursor:pointer;
+    transition:all .3s ease;
+    border:1px solid transparent;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+    color:var(--black);
+  }
+  .btn-gold:hover{
+    background:linear-gradient(135deg, var(--gold), var(--gold-dim));
+    transform:translateY(-2px);
+    box-shadow:0 14px 26px -10px rgba(199,154,46,0.55);
+  }
+  .btn-outline{
+    border-color:rgba(248,243,232,0.35);
+    color:var(--ivory);
+    background:transparent;
+  }
+  .btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold-bright);
+  }
+  .btn-outline-dark{
+    border-color:rgba(34,29,20,0.3);
+    color:var(--ink);
+  }
+  .btn-outline-dark:hover{
+    border-color:var(--gold-dim);
+    color:var(--gold-dim);
+  }
+
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--black);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:150px 0 90px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(199,154,46,0.055) 0 2px, transparent 2px 64px),
+      repeating-linear-gradient(25deg, rgba(199,154,46,0.045) 0 2px, transparent 2px 64px);
+    pointer-events:none;
+  }
+  .hero-crest{
+    position:absolute;
+    right:-140px;
+    top:-80px;
+    width:640px;
+    opacity:0.05;
+    filter:grayscale(1) brightness(3);
+    pointer-events:none;
+  }
+  .hero .container{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.05fr 0.85fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero-copy .eyebrow{color:var(--gold-bright);}
+  .hero-copy h1{
+    font-size:clamp(42px, 6vw, 74px);
+    color:var(--ivory);
+    margin:22px 0 8px;
+  }
+  .hero-copy h1 em{
+    font-style:italic;
+    color:var(--gold-bright);
+    font-weight:400;
+  }
+  .hero-copy .role-line{
+    font-size:16px;
+    color:var(--muted-light);
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin-bottom:26px;
+  }
+  .hero-copy p.lede{
+    font-size:17px;
+    line-height:1.8;
+    color:rgba(248,243,232,0.72);
+    max-width:520px;
+    margin-bottom:38px;
+  }
+  .hero-btns{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:56px;
+  }
+  .hero-stats{
+    display:flex;
+    gap:0;
+    border-top:1px solid var(--line);
+    padding-top:26px;
+    max-width:520px;
+  }
+  .hero-stats div{
+    flex:1;
+    padding-right:24px;
+  }
+  .hero-stats strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:30px;
+    color:var(--gold-bright);
+    font-weight:500;
+  }
+  .hero-stats span{
+    font-size:11.5px;
+    letter-spacing:0.06em;
+    color:var(--muted-light);
+    text-transform:uppercase;
+    font-weight:600;
+  }
+
+  .hero-portrait{
+    position:relative;
+  }
+  .portrait-frame{
+    position:relative;
+    border-radius:4px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+  }
+  .portrait-frame img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:top center;
+  }
+  .portrait-frame::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(10,9,6,0.55));
+  }
+  .corner{
+    position:absolute;
+    width:54px; height:54px;
+    border:2px solid var(--gold);
+    z-index:2;
+  }
+  .corner.tl{top:-14px; left:-14px; border-right:none; border-bottom:none;}
+  .corner.br{bottom:-14px; right:-14px; border-left:none; border-top:none;}
+  .portrait-badge{
+    position:absolute;
+    left:-28px;
+    bottom:34px;
+    background:var(--ivory);
+    padding:18px 24px;
+    box-shadow:var(--shadow);
+    max-width:230px;
+    z-index:3;
+  }
+  .portrait-badge p{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--gold-dim);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .portrait-badge h4{
+    font-size:16px;
+    color:var(--ink);
+    font-weight:600;
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:var(--muted-light);
+    font-size:10.5px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+  }
+  .scroll-cue .line{
+    width:1px; height:34px;
+    background:linear-gradient(var(--gold), transparent);
+    animation:cue 1.8s ease-in-out infinite;
+  }
+  @keyframes cue{
+    0%{transform:scaleY(0.3); transform-origin:top;}
+    50%{transform:scaleY(1); transform-origin:top;}
+    100%{transform:scaleY(0.3); transform-origin:bottom;}
+  }
+
+  /* ---------- marks strip ---------- */
+  .marks{
+    background:var(--ivory);
+    padding:42px 0;
+    border-bottom:1px solid rgba(34,29,20,0.08);
+  }
+  .marks .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:26px;
+  }
+  .mark-item{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  .mark-item strong{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .mark-item span{
+    font-size:11.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-weight:700;
+    max-width:150px;
+  }
+
+  /* ---------- section shared ---------- */
+  section{padding:130px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:60px;
+  }
+  .section-head h2{
+    font-size:clamp(30px, 4vw, 46px);
+    margin-top:18px;
+    color:var(--ink);
+  }
+  .section-head p{
+    margin-top:18px;
+    font-size:16.5px;
+    line-height:1.8;
+    color:var(--muted);
+  }
+  .on-dark .section-head h2{color:var(--ivory);}
+  .on-dark .section-head p{color:rgba(248,243,232,0.6);}
+
+  /* ---------- about ---------- */
+  .about{background:var(--ivory);}
+  .about .container{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:80px;
+    align-items:center;
+  }
+  .about-img{
+    position:relative;
+  }
+  .about-img img{
+    width:100%;
+    border-radius:4px;
+    box-shadow:var(--shadow);
+  }
+  .about-img::before{
+    content:"";
+    position:absolute;
+    top:-24px; left:-24px;
+    width:70%; height:70%;
+    border:1.5px solid var(--gold);
+    z-index:-1;
+  }
+  .about-text .eyebrow{color:var(--gold-dim);}
+  .about-text .eyebrow::before{background:var(--gold-dim);}
+  .about-text h2{
+    font-size:clamp(28px,3.6vw,42px);
+    margin:20px 0 24px;
+    color:var(--ink);
+  }
+  .about-text p{
+    font-size:16px;
+    line-height:1.85;
+    color:#4c4536;
+    margin-bottom:18px;
+  }
+  .about-text .pull{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--gold-dim);
+    border-left:2px solid var(--gold);
+    padding-left:22px;
+    margin:30px 0;
+    line-height:1.5;
+  }
+  .signature-row{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-top:34px;
+  }
+  .signature-row img{height:38px; width:38px; border-radius:50%;}
+  .signature-row div p:first-child{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--ink);
+  }
+  .signature-row div p:last-child{
+    font-size:11.5px;
+    color:var(--muted);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-top:2px;
+  }
+
+  /* ---------- ventures ---------- */
+  .ventures{
+    background:var(--black);
+    position:relative;
+    overflow:hidden;
+  }
+  .ventures::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(115deg, rgba(199,154,46,0.05) 0 2px, transparent 2px 70px);
+    pointer-events:none;
+  }
+  .venture-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:rgba(199,154,46,0.18);
+    border:1px solid rgba(199,154,46,0.18);
+    position:relative;
+    z-index:1;
+  }
+  .venture-card{
+    background:var(--charcoal);
+    padding:44px 34px;
+    transition:background .35s ease;
+    min-height:230px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .venture-card:hover{background:var(--charcoal-2);}
+  .venture-card .num{
+    font-family:'Fraunces', serif;
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:0.08em;
+  }
+  .venture-card h3{
+    font-size:22px;
+    color:var(--ivory);
+    margin:26px 0 10px;
+    font-weight:500;
+  }
+  .venture-card p{
+    font-size:14px;
+    line-height:1.7;
+    color:rgba(248,243,232,0.55);
+  }
+  .venture-card .arrow{
+    margin-top:20px;
+    color:var(--gold);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    opacity:0;
+    transform:translateX(-6px);
+    transition:all .3s ease;
+  }
+  .venture-card:hover .arrow{opacity:1; transform:translateX(0);}
+
+  /* ---------- heritage / two worlds ---------- */
+  .heritage{
+    background:var(--ivory-2);
+  }
+  .heritage .container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    align-items:stretch;
+    box-shadow:var(--shadow);
+  }
+  .heritage-panel{
+    position:relative;
+    min-height:520px;
+    overflow:hidden;
+  }
+  .heritage-panel img{
+    width:100%; height:100%;
+    object-fit:cover;
+    position:absolute; inset:0;
+  }
+  .heritage-panel .overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,9,6,0) 40%, rgba(10,9,6,0.88));
+    display:flex;
+    align-items:flex-end;
+    padding:36px;
+  }
+  .heritage-panel .overlay div p:first-child{
+    color:var(--gold-bright);
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .heritage-panel .overlay div p:last-child{
+    color:var(--ivory);
+    font-family:'Fraunces', serif;
+    font-size:22px;
+  }
+
+  /* ---------- journal / words ---------- */
+  .journal{background:var(--ivory);}
+  .journal-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:34px;
+  }
+  .journal-card{
+    background:#fff;
+    border:1px solid rgba(34,29,20,0.08);
+    padding:38px 32px;
+    position:relative;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .journal-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+  }
+  .journal-card .quote-mark{
+    font-family:'Fraunces', serif;
+    font-size:52px;
+    color:var(--gold);
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .journal-card p.quote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:18px;
+    line-height:1.55;
+    color:var(--ink);
+    margin-bottom:22px;
+    min-height:130px;
+  }
+  .journal-card .meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid rgba(34,29,20,0.08);
+    padding-top:16px;
+  }
+  .journal-card .meta span{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    font-weight:700;
+  }
+
+  /* ---------- connect / newsletter ---------- */
+  .connect{
+    background:linear-gradient(135deg, var(--gold-dim), var(--gold) 55%, var(--gold-bright));
+    color:var(--black);
+    position:relative;
+    overflow:hidden;
+  }
+  .connect::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(115deg, rgba(10,9,6,0.05) 0 2px, transparent 2px 60px);
+  }
+  .connect .container{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  .connect .eyebrow{color:rgba(10,9,6,0.65);}
+  .connect .eyebrow::before{background:rgba(10,9,6,0.5);}
+  .connect h2{
+    font-size:clamp(30px,4vw,46px);
+    color:var(--black);
+    margin:18px 0 20px;
+  }
+  .connect p{
+    font-size:16px;
+    line-height:1.75;
+    color:rgba(10,9,6,0.7);
+    max-width:460px;
+  }
+  .connect-socials{
+    display:flex;
+    gap:14px;
+    margin-top:34px;
+  }
+  .connect-socials a{
+    width:44px; height:44px;
+    border:1.5px solid rgba(10,9,6,0.35);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:700;
+    transition:all .25s ease;
+  }
+  .connect-socials a:hover{
+    background:var(--black);
+    color:var(--gold-bright);
+    border-color:var(--black);
+  }
+  .connect-form{
+    background:var(--black);
+    padding:44px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .connect-form h3{
+    font-size:20px;
+    color:var(--ivory);
+    margin-bottom:8px;
+  }
+  .connect-form p{
+    font-size:13.5px;
+    color:rgba(248,243,232,0.55);
+    margin-bottom:26px;
+  }
+  .form-row{display:flex; gap:12px;}
+  .connect-form input{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(248,243,232,0.25);
+    padding:12px 2px;
+    color:var(--ivory);
+    font-family:'Manrope', sans-serif;
+    font-size:14px;
+    margin-bottom:20px;
+    outline:none;
+    transition:border-color .3s ease;
+  }
+  .connect-form input::placeholder{color:rgba(248,243,232,0.4);}
+  .connect-form input:focus{border-color:var(--gold-bright);}
+  .connect-form .btn{width:100%; margin-top:6px;}
+  .form-note{
+    font-size:11px;
+    color:rgba(248,243,232,0.35);
+    margin-top:14px;
+    text-align:center;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--black);
+    padding:70px 0 30px;
+  }
+  .footer-top{
+    display:grid;
+    grid-template-columns:1.4fr 0.8fr 0.8fr 1fr;
+    gap:50px;
+    padding-bottom:56px;
+    border-bottom:1px solid rgba(199,154,46,0.15);
+  }
+  .footer-brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .footer-brand img{height:46px; width:46px; border-radius:50%;}
+  .footer-brand div{
+    font-family:'Fraunces', serif;
+    color:var(--ivory);
+    font-size:17px;
+  }
+  .footer-brand div span{
+    display:block;
+    font-family:'Manrope', sans-serif;
+    font-size:10px;
+    letter-spacing:0.18em;
+    color:var(--gold);
+    font-weight:700;
+    margin-top:3px;
+  }
+  .footer-top p{
+    font-size:13.5px;
+    color:rgba(248,243,232,0.5);
+    line-height:1.8;
+    max-width:280px;
+  }
+  .footer-col h4{
+    font-family:'Manrope', sans-serif;
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:20px;
+  }
+  .footer-col ul li{margin-bottom:12px;}
+  .footer-col a{
+    font-size:14px;
+    color:rgba(248,243,232,0.65);
+    transition:color .25s ease;
+  }
+  .footer-col a:hover{color:var(--gold-bright);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:26px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-bottom p{
+    font-size:12px;
+    color:rgba(248,243,232,0.35);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    nav{display:none;}
+    .nav-toggle{
+      display:flex;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+      background:none;
+      border:none;
+      padding:6px;
+    }
+    .nav-toggle span{width:24px; height:2px; background:var(--ivory);}
+    .header-cta{display:none;}
+    .hero .container{grid-template-columns:1fr; text-align:left;}
+    .hero-portrait{max-width:380px;}
+    .about .container{grid-template-columns:1fr; gap:50px;}
+    .about-img{max-width:420px;}
+    .venture-grid{grid-template-columns:repeat(2,1fr);}
+    .heritage .container{grid-template-columns:1fr;}
+    .journal-grid{grid-template-columns:1fr;}
+    .connect .container{grid-template-columns:1fr; gap:40px;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:36px;}
+  }
+  @media (max-width:600px){
+    .container{padding:0 22px;}
+    section{padding:90px 0;}
+    .venture-grid{grid-template-columns:1fr;}
+    .marks .container{justify-content:flex-start; gap:34px;}
+    .portrait-badge{left:0; bottom:-24px;}
+    .form-row{flex-direction:column;}
+    .footer-top{grid-template-columns:1fr;}
+    .hero-stats{flex-wrap:wrap; gap:20px 0;}
+    .hero-stats div{flex:1 1 45%;}
+  }
+
+  /* mobile nav drawer */
+  .mobile-nav{
+    position:fixed;
+    inset:0;
+    background:var(--black);
+    z-index:200;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    padding:0 40px;
+    transform:translateX(100%);
+    transition:transform .4s ease;
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav a{
+    font-family:'Fraunces', serif;
+    font-size:32px;
+    color:var(--ivory);
+    padding:14px 0;
+    border-bottom:1px solid rgba(199,154,46,0.15);
+    width:100%;
+  }
+  .mobile-nav-close{
+    position:absolute;
+    top:26px; right:32px;
+    color:var(--ivory);
+    font-size:28px;
+    background:none;
+    border:none;
+    cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="container">
+    <a href="#top" class="brand">
+      <img src="images/pfo-logo.png" alt="PFO Logo">
+      <div class="brand-text">Fuhad Oloto
+        <span>PRINCE &middot; CHAIRMAN, FUTOL GROUP</span>
+      </div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#heritage">Heritage</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+    <a href="#connect" class="btn btn-gold header-cta">Get In Touch</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
+  <a href="#about">About</a>
+  <a href="#ventures">Ventures</a>
+  <a href="#heritage">Heritage</a>
+  <a href="#journal">Journal</a>
+  <a href="#connect">Connect</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img src="images/pfo-logo.png" class="hero-crest" alt="">
+  <div class="container">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Lagos, Nigeria</p>
+      <h1>Prince Fuhad<br><em>Oloto</em></h1>
+      <p class="role-line">Chairman &amp; CEO, Futol Group of Companies</p>
+      <p class="lede">A Lagos-born prince of the Oloto royal house building a diversified business empire — from construction to hospitality — while carrying forward the values, culture and responsibility of his heritage.</p>
+      <div class="hero-btns">
+        <a href="#about" class="btn btn-gold">Learn My Story</a>
+        <a href="#ventures" class="btn btn-outline">View Ventures</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>6</strong><span>Companies Under Futol Group</span></div>
+        <div><strong>HRM</strong><span>Oloto Royal House, Lagos</span></div>
+        <div><strong>15+</strong><span>Years in Enterprise</span></div>
+      </div>
+    </div>
+    <div class="hero-portrait reveal">
+      <div class="portrait-frame">
+        <span class="corner tl"></span>
+        <span class="corner br"></span>
+        <img src="images/portrait-business.jpeg" alt="Prince Fuhad Oloto in business attire">
+      </div>
+      <div class="portrait-badge">
+        <p>Serial Entrepreneur</p>
+        <h4>Building across construction, logistics, security &amp; hospitality</h4>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- MARKS / QUICK FACTS -->
+<section class="marks">
+  <div class="container">
+    <div class="mark-item"><strong>Futol Construction</strong><span>Real estate &amp; development</span></div>
+    <div class="mark-item"><strong>Futol Logistics</strong><span>Haulage &amp; supply chain</span></div>
+    <div class="mark-item"><strong>Futol Guards</strong><span>Security services</span></div>
+    <div class="mark-item"><strong>Futol Homes</strong><span>Residential property</span></div>
+    <div class="mark-item"><strong>Futol Hotel</strong><span>Hospitality</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-img reveal">
+      <img src="images/portrait-royal.jpeg" alt="Prince Fuhad Oloto in traditional royal attire">
+    </div>
+    <div class="about-text reveal">
+      <p class="eyebrow">About Prince Fuhad</p>
+      <h2>A prince who chose to build, not just inherit</h2>
+      <p>Prince Fuhad Oloto is a member of the Oloto royal family of Lagos and one of the city's most recognisable young business figures — known equally in boardrooms and at the heart of Lagos's social and cultural life.</p>
+      <p>As Chairman and CEO of the Futol Group, he oversees a portfolio of companies spanning construction, logistics, private security, environmental services, residential real estate and hospitality — each built with the same discipline and attention to detail he brings to his royal responsibilities.</p>
+      <p class="pull">"A man is made not by age, but by pain, failure, rejection and the risks he's willing to take."</p>
+      <p>Beyond the boardroom, Prince Fuhad remains deeply connected to his royal heritage and community — a steady presence at cultural, philanthropic and family milestones, and an advocate for the values that shaped him.</p>
+      <div class="signature-row">
+        <img src="images/pfo-logo.png" alt="">
+        <div>
+          <p>Fuhad Oloto</p>
+          <p>Chairman, Futol Group of Companies</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="ventures on-dark" id="ventures">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Futol Group</p>
+      <h2>Six companies. One standard of excellence.</h2>
+      <p>Every venture under the Futol Group is built around the same principle — dependable service, delivered with integrity, across the sectors that keep Lagos moving.</p>
+    </div>
+  </div>
+  <div class="venture-grid reveal">
+    <div class="venture-card">
+      <span class="num">01 / Construction</span>
+      <div>
+        <h3>Futol Construction Ltd</h3>
+        <p>Delivering residential and commercial building projects across Lagos with quality craftsmanship and timely execution.</p>
+      </div>
+      <span class="arrow">Explore &rarr;</span>
+    </div>
+    <div class="venture-card">
+      <span class="num">02 / Logistics</span>
+      <div>
+        <h3>Futol Logistics Ltd</h3>
+        <p>Reliable haulage and supply-chain solutions supporting businesses across Nigeria's fast-moving commercial corridors.</p>
+      </div>
+      <span class="arrow">Explore &rarr;</span>
+    </div>
+    <div class="venture-card">
+      <span class="num">03 / Security</span>
+      <div>
+        <h3>Futol Guards Ltd</h3>
+        <p>Trained protection personnel and security solutions for residential estates, corporate sites and private clients.</p>
+      </div>
+      <span class="arrow">Explore &rarr;</span>
+    </div>
+    <div class="venture-card">
+      <span class="num">04 / Environment</span>
+      <div>
+        <h3>Futol Environmental Services Ltd</h3>
+        <p>Waste management and environmental maintenance services supporting cleaner, healthier communities.</p>
+      </div>
+      <span class="arrow">Explore &rarr;</span>
+    </div>
+    <div class="venture-card">
+      <span class="num">05 / Real Estate</span>
+      <div>
+        <h3>Futol Homes Ltd</h3>
+        <p>Residential developments designed to give families and investors a place to call home in Lagos.</p>
+      </div>
+      <span class="arrow">Explore &rarr;</span>
+    </div>
+    <div class="venture-card">
+      <span class="num">06 / Hospitality</span>
+      <div>
+        <h3>Futol Hotel Ltd</h3>
+        <p>A hospitality venture bringing comfort and Lagos hospitality together for guests and travellers alike.</p>
+      </div>
+      <span class="arrow">Explore &rarr;</span>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage" id="heritage">
+  <div class="container reveal">
+    <div class="heritage-panel">
+      <img src="images/portrait-business.jpeg" alt="Prince Fuhad Oloto — enterprise">
+      <div class="overlay">
+        <div>
+          <p>In the Boardroom</p>
+          <p>Building enterprise with discipline and vision</p>
+        </div>
+      </div>
+    </div>
+    <div class="heritage-panel">
+      <img src="images/portrait-royal.jpeg" alt="Prince Fuhad Oloto — royal heritage">
+      <div class="overlay">
+        <div>
+          <p>In the Royal Court</p>
+          <p>Carrying the legacy of the Oloto royal house</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL / WORDS -->
+<section class="journal" id="journal">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">In His Own Words</p>
+      <h2>Thoughts on family, growth &amp; legacy</h2>
+    </div>
+    <div class="journal-grid reveal">
+      <div class="journal-card">
+        <p class="quote-mark">&ldquo;</p>
+        <p class="quote">A man is made not by age, but by pain, failure, rejection, loss and the risks he dares to take.</p>
+        <div class="meta">
+          <span>Reflections</span>
+          <span>@hrmoloto</span>
+        </div>
+      </div>
+      <div class="journal-card">
+        <p class="quote-mark">&ldquo;</p>
+        <p class="quote">Marrying my wife remains the best decision of my life. Her love and support inspire everything I build.</p>
+        <div class="meta">
+          <span>Family</span>
+          <span>Wedding Anniversary</span>
+        </div>
+      </div>
+      <div class="journal-card">
+        <p class="quote-mark">&ldquo;</p>
+        <p class="quote">Another year, another chapter — blessed to keep growing and grateful to everyone who's been part of the journey.</p>
+        <div class="meta">
+          <span>Gratitude</span>
+          <span>Birthday Reflection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Let's start a conversation</h2>
+      <p>For business enquiries, partnerships, media or personal appearances — reach out directly or follow along across social platforms.</p>
+      <div class="connect-socials">
+        <a href="https://x.com/hrmoloto" target="_blank" rel="noopener" aria-label="X / Twitter">X</a>
+        <a href="https://www.instagram.com/pfomedia/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.youtube.com/@fuhadoloto" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        <a href="https://www.tiktok.com/discover/prince-fuad-oloto" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+    <form class="connect-form reveal" onsubmit="event.preventDefault(); this.reset(); this.querySelector('.form-note').textContent='Thank you — your message has been received.';">
+      <h3>Send a Message</h3>
+      <p>Fill in your details and the team will respond shortly.</p>
+      <div class="form-row">
+        <input type="text" placeholder="First name" required>
+        <input type="text" placeholder="Last name" required>
+      </div>
+      <input type="email" placeholder="Email address" required>
+      <input type="text" placeholder="Subject">
+      <button type="submit" class="btn btn-gold">Send Message</button>
+      <p class="form-note">We typically respond within 2–3 business days.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="images/pfo-logo.png" alt="PFO Logo">
+          <div>Fuhad Oloto<span>PRINCE FUHAD OLOTO</span></div>
+        </div>
+        <p>Chairman of the Futol Group of Companies and member of the Oloto royal house of Lagos — building enterprise, guided by heritage.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#ventures">Ventures</a></li>
+          <li><a href="#heritage">Heritage</a></li>
+          <li><a href="#journal">Journal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Companies</h4>
+        <ul>
+          <li><a href="#ventures">Futol Construction</a></li>
+          <li><a href="#ventures">Futol Logistics</a></li>
+          <li><a href="#ventures">Futol Homes</a></li>
+          <li><a href="#ventures">Futol Hotel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://x.com/hrmoloto" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li><a href="https://www.instagram.com/pfomedia/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@fuhadoloto" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Prince Fuhad Oloto. All rights reserved.</p>
+      <p>Site by PFO Media</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navClose = document.getElementById('navClose');
+  const mobileNav = document.getElementById('mobileNav');
+  navToggle.addEventListener('click', () => mobileNav.classList.add('open'));
+  navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
