@@ -194,6 +194,57 @@
 
   .nav-toggle{display:none;}
 
+  /* ---------- top banner ---------- */
+  .top-banner{
+    position:relative;
+    background:var(--black);
+    height:100vh;
+    min-height:560px;
+    overflow:hidden;
+  }
+  .top-banner img{
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:top center;
+    opacity:0.92;
+  }
+  .top-banner::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,9,6,0.55) 0%, rgba(10,9,6,0.05) 30%, rgba(10,9,6,0.05) 60%, rgba(10,9,6,0.9) 100%);
+  }
+  .top-banner .frame{
+    position:absolute;
+    inset:26px;
+    border:1px solid rgba(199,154,46,0.45);
+    pointer-events:none;
+    z-index:2;
+  }
+  .banner-caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    z-index:3;
+    padding:0 0 48px;
+  }
+  .banner-caption .container{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .banner-caption h2{
+    font-size:clamp(26px, 3.4vw, 40px);
+    color:var(--ivory);
+  }
+  .banner-caption p{
+    font-size:13.5px;
+    color:var(--muted-light);
+    max-width:340px;
+    line-height:1.7;
+    margin-top:10px;
+  }
+
   /* ---------- hero ---------- */
   .hero{
     position:relative;
@@ -870,7 +921,7 @@
 <header id="siteHeader">
   <div class="container">
     <a href="#top" class="brand">
-      <img src="pfo-logo.png" alt="PFO Logo">
+      <img src="images/pfo-logo.png" alt="PFO Logo">
       <div class="brand-text">Fuhad Oloto
         <span>PRINCE &middot; CHAIRMAN, FUTOL GROUP</span>
       </div>
@@ -878,7 +929,7 @@
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#ventures">Companies</a></li>
+        <li><a href="#ventures">Ventures</a></li>
         <li><a href="#heritage">Heritage</a></li>
         <li><a href="#journal">Journal</a></li>
         <li><a href="#connect">Connect</a></li>
@@ -894,15 +945,29 @@
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
   <a href="#about">About</a>
-  <a href="#ventures">Companies</a>
+  <a href="#ventures">Ventures</a>
   <a href="#heritage">Heritage</a>
   <a href="#journal">Journal</a>
   <a href="#connect">Connect</a>
 </div>
 
+<!-- TOP BANNER -->
+<section class="top-banner">
+  <img src="images/portrait-banner.jpeg" alt="Prince Fuhad Oloto">
+  <span class="frame"></span>
+  <div class="banner-caption">
+    <div class="container">
+      <div class="reveal in">
+        <p class="eyebrow" style="color:var(--gold-bright); margin-bottom:14px;">Prince Fuhad Oloto</p>
+        <h2>Enterprise, elegance and heritage — in one man.</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- HERO -->
 <section class="hero" id="top">
-  <img src="pfo-logo.png" class="hero-crest" alt="">
+  <img src="images/pfo-logo.png" class="hero-crest" alt="">
   <div class="container">
     <div class="hero-copy reveal">
       <p class="eyebrow">Lagos, Nigeria</p>
@@ -911,7 +976,7 @@
       <p class="lede">A Lagos-born prince of the Oloto royal house building a diversified business empire — from construction to hospitality — while carrying forward the values, culture and responsibility of his heritage.</p>
       <div class="hero-btns">
         <a href="#about" class="btn btn-gold">Learn My Story</a>
-        <a href="#ventures" class="btn btn-outline">My Companies</a>
+        <a href="#ventures" class="btn btn-outline">View Ventures</a>
       </div>
       <div class="hero-stats">
         <div><strong>6</strong><span>Companies Under Futol Group</span></div>
@@ -923,7 +988,7 @@
       <div class="portrait-frame">
         <span class="corner tl"></span>
         <span class="corner br"></span>
-        <img src="portrait-business.jpeg" alt="Prince Fuhad Oloto in business attire">
+        <img src="images/portrait-business.jpeg" alt="Prince Fuhad Oloto in business attire">
       </div>
       <div class="portrait-badge">
         <p>Serial Entrepreneur</p>
@@ -949,7 +1014,7 @@
 <section class="about" id="about">
   <div class="container">
     <div class="about-img reveal">
-      <img src="portrait-royal.jpeg" alt="Prince Fuhad Oloto in traditional royal attire">
+      <img src="images/portrait-royal.jpeg" alt="Prince Fuhad Oloto in traditional royal attire">
     </div>
     <div class="about-text reveal">
       <p class="eyebrow">About Prince Fuhad</p>
@@ -959,7 +1024,7 @@
       <p class="pull">"A man is made not by age, but by pain, failure, rejection and the risks he's willing to take."</p>
       <p>Beyond the boardroom, Prince Fuhad remains deeply connected to his royal heritage and community — a steady presence at cultural, philanthropic and family milestones, and an advocate for the values that shaped him.</p>
       <div class="signature-row">
-        <img src="pfo-logo.png" alt="">
+        <img src="images/pfo-logo.png" alt="">
         <div>
           <p>Fuhad Oloto</p>
           <p>Chairman, Futol Group of Companies</p>
@@ -975,7 +1040,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">The Futol Group</p>
       <h2>Six companies. One standard of excellence.</h2>
-      <p>Every companies under the Futol Group is built around the same principle — dependable service, delivered with integrity, across the sectors that keep Lagos moving.</p>
+      <p>Every venture under the Futol Group is built around the same principle — dependable service, delivered with integrity, across the sectors that keep Lagos moving.</p>
     </div>
   </div>
   <div class="venture-grid reveal">
@@ -1034,7 +1099,7 @@
 <section class="heritage" id="heritage">
   <div class="container reveal">
     <div class="heritage-panel">
-      <img src="portrait-business.jpeg" alt="Prince Fuhad Oloto — enterprise">
+      <img src="images/portrait-business.jpeg" alt="Prince Fuhad Oloto — enterprise">
       <div class="overlay">
         <div>
           <p>In the Boardroom</p>
@@ -1043,7 +1108,7 @@
       </div>
     </div>
     <div class="heritage-panel">
-      <img src="portrait-royal.jpeg" alt="Prince Fuhad Oloto — royal heritage">
+      <img src="images/portrait-royal.jpeg" alt="Prince Fuhad Oloto — royal heritage">
       <div class="overlay">
         <div>
           <p>In the Royal Court</p>
@@ -1124,7 +1189,7 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <img src="pfo-logo.png" alt="PFO Logo">
+          <img src="images/pfo-logo.png" alt="PFO Logo">
           <div>Fuhad Oloto<span>PRINCE FUHAD OLOTO</span></div>
         </div>
         <p>Chairman of the Futol Group of Companies and member of the Oloto royal house of Lagos — building enterprise, guided by heritage.</p>
@@ -1158,7 +1223,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> Prince Fuhad Oloto. All rights reserved.</p>
-      <p>Design by CreativeWura</p>
+      <p>Site by PFO Media</p>
     </div>
   </div>
 </footer>
