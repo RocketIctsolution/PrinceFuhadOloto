@@ -194,6 +194,107 @@
 
   .nav-toggle{display:none;}
 
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--black); position:relative; overflow:hidden;}
+  .gallery::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(25deg, rgba(199,154,46,0.045) 0 2px, transparent 2px 64px);
+    pointer-events:none;
+  }
+  .gallery-grid{
+    columns:4 260px;
+    column-gap:14px;
+  }
+  .gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:3px;
+    cursor:pointer;
+    border:1px solid rgba(199,154,46,0.2);
+    break-inside:avoid;
+    margin-bottom:14px;
+    display:block;
+  }
+  .gallery-item img{
+    width:100%; height:auto;
+    display:block;
+    object-fit:cover;
+    transition:transform .6s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-item::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 55%, rgba(10,9,6,0.75));
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+  .gallery-item:hover::after{opacity:1;}
+  .gallery-item .g-label{
+    position:absolute;
+    left:16px; bottom:14px;
+    color:var(--gold-bright);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    font-weight:700;
+    opacity:0;
+    transform:translateY(8px);
+    transition:all .35s ease;
+    z-index:2;
+  }
+  .gallery-item:hover .g-label{opacity:1; transform:translateY(0);}
+
+  .gallery-lightbox{
+    position:fixed; inset:0;
+    background:rgba(10,9,6,0.94);
+    z-index:300;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .35s ease;
+    padding:40px;
+  }
+  .gallery-lightbox.open{opacity:1; pointer-events:auto;}
+  .gallery-lightbox img{
+    max-width:82vw;
+    max-height:86vh;
+    border:1px solid rgba(199,154,46,0.4);
+    box-shadow:0 40px 80px rgba(0,0,0,0.6);
+  }
+  .lightbox-close{
+    position:absolute;
+    top:26px; right:34px;
+    color:var(--ivory);
+    font-size:30px;
+    background:none;
+    border:none;
+    cursor:pointer;
+  }
+  .lightbox-close:hover{color:var(--gold-bright);}
+  .lightbox-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(199,154,46,0.15);
+    border:1px solid rgba(199,154,46,0.4);
+    color:var(--ivory);
+    width:52px; height:52px;
+    border-radius:50%;
+    font-size:22px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all .25s ease;
+  }
+  .lightbox-nav:hover{background:var(--gold); color:var(--black);}
+  .lightbox-prev{left:24px;}
+  .lightbox-next{right:24px;}
+
   /* ---------- top banner ---------- */
   .top-banner{
     position:relative;
@@ -785,11 +886,26 @@
   }
   .footer-top{
     display:grid;
-    grid-template-columns:1.4fr 0.8fr 0.8fr 1fr;
-    gap:50px;
+    grid-template-columns:1.3fr 0.7fr 0.85fr 0.7fr 1.15fr;
+    gap:40px;
     padding-bottom:56px;
     border-bottom:1px solid rgba(199,154,46,0.15);
   }
+  .contact-item{margin-bottom:16px;}
+  .contact-item p:first-child{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:5px;
+  }
+  .contact-item a, .contact-item p:last-child{
+    font-size:13.5px;
+    color:rgba(248,243,232,0.72);
+    line-height:1.6;
+  }
+  .contact-item a:hover{color:var(--gold-bright);}
   .footer-brand{
     display:flex;
     align-items:center;
@@ -866,6 +982,7 @@
     .about-img{max-width:420px;}
     .venture-grid{grid-template-columns:repeat(2,1fr);}
     .heritage .container{grid-template-columns:1fr;}
+    .gallery-grid{columns:2 220px;}
     .journal-grid{grid-template-columns:1fr;}
     .connect .container{grid-template-columns:1fr; gap:40px;}
     .footer-top{grid-template-columns:1fr 1fr; gap:36px;}
@@ -878,6 +995,10 @@
     .portrait-badge{left:0; bottom:-24px;}
     .form-row{flex-direction:column;}
     .footer-top{grid-template-columns:1fr;}
+    .gallery-grid{columns:1;}
+    .lightbox-nav{width:42px; height:42px; font-size:18px;}
+    .lightbox-prev{left:8px;}
+    .lightbox-next{right:8px;}
     .hero-stats{flex-wrap:wrap; gap:20px 0;}
     .hero-stats div{flex:1 1 45%;}
   }
@@ -921,7 +1042,7 @@
 <header id="siteHeader">
   <div class="container">
     <a href="#top" class="brand">
-      <img src="pfo-logo.png" alt="PFO Logo">
+      <img src="images/pfo-logo.png" alt="PFO Logo">
       <div class="brand-text">Fuhad Oloto
         <span>PRINCE &middot; CHAIRMAN, FUTOL GROUP</span>
       </div>
@@ -931,6 +1052,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#ventures">Ventures</a></li>
         <li><a href="#heritage">Heritage</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#journal">Journal</a></li>
         <li><a href="#connect">Connect</a></li>
       </ul>
@@ -947,13 +1069,14 @@
   <a href="#about">About</a>
   <a href="#ventures">Ventures</a>
   <a href="#heritage">Heritage</a>
+  <a href="#gallery">Gallery</a>
   <a href="#journal">Journal</a>
   <a href="#connect">Connect</a>
 </div>
 
 <!-- TOP BANNER -->
 <section class="top-banner">
-  <img src="portrait-banner.jpeg" alt="Prince Fuhad Oloto">
+  <img src="images/portrait-banner.jpeg" alt="Prince Fuhad Oloto">
   <span class="frame"></span>
   <div class="banner-caption">
     <div class="container">
@@ -967,7 +1090,7 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <img src="pfo-logo.png" class="hero-crest" alt="">
+  <img src="images/pfo-logo.png" class="hero-crest" alt="">
   <div class="container">
     <div class="hero-copy reveal">
       <p class="eyebrow">Lagos, Nigeria</p>
@@ -988,7 +1111,7 @@
       <div class="portrait-frame">
         <span class="corner tl"></span>
         <span class="corner br"></span>
-        <img src="portrait-business.jpeg" alt="Prince Fuhad Oloto in business attire">
+        <img src="images/portrait-business.jpeg" alt="Prince Fuhad Oloto in business attire">
       </div>
       <div class="portrait-badge">
         <p>Serial Entrepreneur</p>
@@ -1009,8 +1132,8 @@
     <div class="mark-item"><strong>Futol Rides</strong><span>Mobility &amp; transport</span></div>
     <div class="mark-item"><strong>Futol Oil &amp; Gas</strong><span>Energy</span></div>
     <div class="mark-item"><strong>Futol Children School</strong><span>Education</span></div>
-    <div class="mark-item"><strong>F. Oloto Construction</strong><span>Real estate &amp; development</span></div>
     <div class="mark-item"><strong>Futol Environmental</strong><span>Waste &amp; environment</span></div>
+    <div class="mark-item"><strong>F. Oloto Construction</strong><span>Real estate &amp; development</span></div>
   </div>
 </section>
 
@@ -1018,7 +1141,7 @@
 <section class="about" id="about">
   <div class="container">
     <div class="about-img reveal">
-      <img src="portrait-royal.jpeg" alt="Prince Fuhad Oloto in traditional royal attire">
+      <img src="images/portrait-royal.jpeg" alt="Prince Fuhad Oloto in traditional royal attire">
     </div>
     <div class="about-text reveal">
       <p class="eyebrow">About Prince Fuhad</p>
@@ -1028,7 +1151,7 @@
       <p class="pull">"A man is made not by age, but by pain, failure, rejection and the risks he's willing to take."</p>
       <p>Beyond the boardroom, Prince Fuhad remains deeply connected to his royal heritage and community — a steady presence at cultural, philanthropic and family milestones, and an advocate for the values that shaped him.</p>
       <div class="signature-row">
-        <img src="pfo-logo.png" alt="">
+        <img src="images/pfo-logo.png" alt="">
         <div>
           <p>Fuhad Oloto</p>
           <p>Chairman, Futol Group of Companies</p>
@@ -1105,18 +1228,18 @@
       <span class="arrow">Explore &rarr;</span>
     </div>
     <div class="venture-card">
-      <span class="num">08 / Construction</span>
+      <span class="num">08 / Environment</span>
       <div>
-        <h3>F. Oloto Construction Ltd</h3>
-        <p>Delivering residential and commercial building projects across Lagos with quality craftsmanship and timely execution.</p>
+        <h3>Futol Environmental Services Ltd</h3>
+        <p>Waste management and environmental maintenance services supporting cleaner, healthier communities.</p>
       </div>
       <span class="arrow">Explore &rarr;</span>
     </div>
     <div class="venture-card">
-      <span class="num">09 / Environment</span>
+      <span class="num">09 / Construction</span>
       <div>
-        <h3>Futol Environmental Services Ltd</h3>
-        <p>Waste management and environmental maintenance services supporting cleaner, healthier communities.</p>
+        <h3>F. Oloto Construction Ltd</h3>
+        <p>Delivering residential and commercial building projects across Lagos with quality craftsmanship and timely execution.</p>
       </div>
       <span class="arrow">Explore &rarr;</span>
     </div>
@@ -1127,7 +1250,7 @@
 <section class="heritage" id="heritage">
   <div class="container reveal">
     <div class="heritage-panel">
-      <img src="portrait-business.jpeg" alt="Prince Fuhad Oloto — enterprise">
+      <img src="images/portrait-business.jpeg" alt="Prince Fuhad Oloto — enterprise">
       <div class="overlay">
         <div>
           <p>In the Boardroom</p>
@@ -1136,7 +1259,7 @@
       </div>
     </div>
     <div class="heritage-panel">
-      <img src="portrait-royal.jpeg" alt="Prince Fuhad Oloto — royal heritage">
+      <img src="images/portrait-royal.jpeg" alt="Prince Fuhad Oloto — royal heritage">
       <div class="overlay">
         <div>
           <p>In the Royal Court</p>
@@ -1146,6 +1269,90 @@
     </div>
   </div>
 </section>
+
+<!-- GALLERY -->
+<section class="gallery on-dark" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">In Pictures</p>
+      <h2>More of Prince Fuhad Oloto</h2>
+      <p>A closer look — from the boardroom to the royal court — captured across recent appearances.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-full="images/gallery-14.jpeg">
+        <img src="images/gallery-14.jpeg" alt="Prince Fuhad Oloto in royal attire beside the PFO crest">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-03.jpeg">
+        <img src="images/gallery-03.jpeg" alt="Prince Fuhad Oloto walking past the Futol Group banner">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-12.jpeg">
+        <img src="images/gallery-12.jpeg" alt="Prince Fuhad Oloto in a purple pinstripe suit">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-01.jpeg">
+        <img src="images/gallery-01.jpeg" alt="Prince Fuhad Oloto at York St John University London">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-05.jpeg">
+        <img src="images/gallery-05.jpeg" alt="Prince Fuhad Oloto at his office desk">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-09.jpeg">
+        <img src="images/gallery-09.jpeg" alt="Prince Fuhad Oloto in a black suit with red tie">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-13.jpeg">
+        <img src="images/gallery-13.jpeg" alt="Prince Fuhad Oloto in sunglasses beside gold ornamental clocks">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-07.jpeg">
+        <img src="images/gallery-07.jpeg" alt="Prince Fuhad Oloto standing in his office">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-15.jpeg">
+        <img src="images/gallery-15.jpeg" alt="Prince Fuhad Oloto applauding at an event">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-04.jpeg">
+        <img src="images/gallery-04.jpeg" alt="Prince Fuhad Oloto seated in his office">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-10.jpeg">
+        <img src="images/gallery-10.jpeg" alt="Prince Fuhad Oloto reviewing his phone at an event">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-16.jpeg">
+        <img src="images/gallery-16.jpeg" alt="Prince Fuhad Oloto smiling beside gold ornamental clocks">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-06.jpeg">
+        <img src="images/gallery-06.jpeg" alt="Prince Fuhad Oloto leaning against his office desk">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-02.jpeg">
+        <img src="images/gallery-02.jpeg" alt="Prince Fuhad Oloto at York St John University London">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-08.jpeg">
+        <img src="images/gallery-08.jpeg" alt="Prince Fuhad Oloto at York St John University London">
+        <span class="g-label">View Full Image</span>
+      </div>
+      <div class="gallery-item" data-full="images/gallery-11.jpeg">
+        <img src="images/gallery-11.jpeg" alt="Prince Fuhad Oloto at his office desk with awards">
+        <span class="g-label">View Full Image</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gallery-lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+  <img src="" alt="Prince Fuhad Oloto" id="lightboxImg">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
+</div>
 
 <!-- JOURNAL / WORDS -->
 <section class="journal" id="journal">
@@ -1217,7 +1424,7 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand">
-          <img src="pfo-logo.png" alt="PFO Logo">
+          <img src="images/pfo-logo.png" alt="PFO Logo">
           <div>Fuhad Oloto<span>PRINCE FUHAD OLOTO</span></div>
         </div>
         <p>Chairman of the Futol Group of Companies and member of the Oloto royal house of Lagos — building enterprise, guided by heritage.</p>
@@ -1228,6 +1435,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#ventures">Ventures</a></li>
           <li><a href="#heritage">Heritage</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#journal">Journal</a></li>
         </ul>
       </div>
@@ -1249,10 +1457,26 @@
           <li><a href="https://www.youtube.com/@fuhadoloto" target="_blank" rel="noopener">YouTube</a></li>
         </ul>
       </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="contact-item">
+          <p>Office Address</p>
+          <p>No 1 Olaleye New Town, Iponri, Surulere, Lagos</p>
+        </div>
+        <div class="contact-item">
+          <p>Email</p>
+          <a href="mailto:hrmoloto@yahoo.com">hrmoloto@yahoo.com</a>
+        </div>
+        <div class="contact-item">
+          <p>Call / WhatsApp</p>
+          <a href="tel:+2348029892480">0802 989 2480</a><br>
+          <a href="tel:+2347039223963">0703 922 3963</a>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> Prince Fuhad Oloto. All rights reserved.</p>
-      <p>Site by CREATIVE HUB </p>
+      <p>Site by PFO Media</p>
     </div>
   </div>
 </footer>
@@ -1283,6 +1507,38 @@
     });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
+
+  // gallery lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let currentIndex = 0;
+
+  function openLightbox(index){
+    currentIndex = index;
+    lightboxImg.src = galleryItems[currentIndex].getAttribute('data-full');
+    lightbox.classList.add('open');
+  }
+  function showRelative(delta){
+    currentIndex = (currentIndex + delta + galleryItems.length) % galleryItems.length;
+    lightboxImg.src = galleryItems[currentIndex].getAttribute('data-full');
+  }
+  galleryItems.forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+  lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showRelative(-1); });
+  lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showRelative(1); });
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+    if (e.key === 'ArrowLeft') showRelative(-1);
+    if (e.key === 'ArrowRight') showRelative(1);
+  });
 
   // year
   document.getElementById('year').textContent = new Date().getFullYear();
